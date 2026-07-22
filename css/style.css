@@ -132,7 +132,7 @@ html.js .reveal.in{opacity:1;transform:none}
 .nav-donate::after{display:none}
 .nav-donate:hover{background:var(--gold-400);color:var(--green-950)!important;transform:translateY(-2px)}
 .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;z-index:110}
-.menu-toggle span{display:block;width:26px;height:2.5px;background:#fff;margin:6px 0;transition:all .3s var(--ease)}
+.menu-toggle span{display:block;width:26px;height:2.5px;background:#fff;margin:6px 0;transition:transform .3s var(--ease),opacity .3s var(--ease),background-color .3s var(--ease)}
 .site-header.scrolled .menu-toggle span{background:var(--green-800)}
 .menu-toggle.open span:nth-child(1){transform:translateY(8.5px) rotate(45deg)}
 .menu-toggle.open span:nth-child(2){opacity:0}
@@ -972,3 +972,89 @@ section{position:relative}
 .ow-link:hover .go .arr{transform:translateX(4px)}
 @media (max-width:960px){.ow-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.ow-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   EVENTS PAGE
+   ============================================================ */
+
+/* ---------- Upcoming: featured garden party card ---------- */
+.ev-feature{
+  display:grid;grid-template-columns:1.05fr 1fr;background:#fff;
+  border:1px solid var(--line);border-radius:20px;overflow:hidden;
+  box-shadow:var(--shadow-md);
+}
+.ev-feature .media{position:relative;min-height:440px;overflow:hidden}
+.ev-feature .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.ev-feature:hover .media img{transform:scale(1.05)}
+.ev-feature .media::after{content:"";position:absolute;inset:0;background:linear-gradient(140deg,rgba(11,36,24,.28),transparent 55%)}
+.ev-feature .media .event-badge{top:1.3rem;left:1.3rem}
+.ev-feature .content{padding:clamp(2rem,4.5vw,3.4rem);display:flex;flex-direction:column;justify-content:center}
+.ev-feature .content .eyebrow{color:var(--gold-600)}
+.ev-feature h3{font-size:clamp(1.8rem,3.2vw,2.6rem);color:var(--green-900);margin:1rem 0 .9rem;line-height:1.15}
+.ev-feature h3 .accent{color:var(--gold-600);font-style:italic;font-weight:500}
+.ev-feature .desc{color:var(--ink-soft);line-height:1.8;font-size:.98rem}
+
+/* Big date lockup */
+.ev-date{
+  display:flex;align-items:center;gap:1.2rem;margin:1.6rem 0 1.4rem;
+  padding:1.1rem 1.4rem;background:var(--green-950);border-radius:14px;color:#fff;
+  border-left:4px solid var(--gold-500);
+}
+.ev-date .dow{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--gold-400)}
+.ev-date .num{font-family:var(--serif);font-size:clamp(2.4rem,4vw,3.2rem);font-weight:600;line-height:1;color:var(--gold-300)}
+.ev-date .mon{font-family:var(--serif);font-size:1.15rem;color:#fff;line-height:1.25}
+.ev-date .mon small{display:block;font-size:.78rem;color:rgba(255,255,255,.65);letter-spacing:.1em;text-transform:uppercase}
+.ev-date .time{margin-left:auto;text-align:right}
+.ev-date .time .t{font-family:var(--serif);font-size:1.3rem;color:var(--gold-300)}
+.ev-date .time .k{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+
+/* Detail chips (canapes, exhibition, music) */
+.ev-details{display:flex;flex-direction:column;gap:.75rem;margin:0 0 1.6rem}
+.ev-detail{display:flex;align-items:flex-start;gap:.85rem}
+.ev-detail .ic{
+  flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  background:var(--gold-100);color:var(--green-800);font-size:1rem;border:1px solid var(--line-gold);
+}
+.ev-detail .tx .k{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--gold-600)}
+.ev-detail .tx .v{font-size:.95rem;color:var(--ink);font-weight:600;line-height:1.4}
+
+/* Tickets-soon pill */
+.ev-soon{
+  display:inline-flex;align-items:center;gap:.6rem;align-self:flex-start;
+  background:var(--green-100);color:var(--green-800);border:1px dashed var(--green-600);
+  font-weight:800;font-size:.85rem;letter-spacing:.06em;padding:.65rem 1.2rem;border-radius:999px;
+}
+.ev-soon .dot{width:8px;height:8px;border-radius:50%;background:var(--gold-500);animation:pulseDot 1.8s var(--ease) infinite}
+@keyframes pulseDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.5}}
+.ev-feature .cta-row{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.4rem}
+@media (max-width:900px){
+  .ev-feature{grid-template-columns:1fr}
+  .ev-feature .media{min-height:280px}
+  .ev-date .time{margin-left:0;text-align:left}
+  .ev-date{flex-wrap:wrap}
+}
+
+/* ---------- Past events: year headers ---------- */
+.ev-year{
+  display:flex;align-items:center;gap:1.2rem;margin:3.2rem 0 1.6rem;
+}
+.ev-year .y{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:600;color:var(--green-800)}
+.ev-year .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line-gold),transparent)}
+
+/* ---------- Host / sponsor contact band ---------- */
+.ev-contact{background:var(--green-950);color:#fff;position:relative;overflow:hidden}
+.ev-contact::before{content:"";position:absolute;inset:0;background:radial-gradient(800px 420px at 85% 0%,rgba(197,160,40,.16),transparent 60%);pointer-events:none}
+.ev-contact .container{position:relative;z-index:1}
+.ev-contact .section-head h2{color:#fff}
+.ev-contact .section-head .lead{color:rgba(255,255,255,.82)}
+.evc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.evc-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:18px;
+  padding:2rem 2.1rem;transition:transform .35s var(--ease),border-color .35s,background .35s;
+}
+.evc-card:hover{transform:translateY(-5px);border-color:var(--gold-500);background:rgba(255,255,255,.08)}
+.evc-card .ic{font-size:1.6rem;color:var(--gold-400);margin-bottom:1rem}
+.evc-card h3{font-family:var(--serif);font-size:1.35rem;color:#fff;margin-bottom:.7rem}
+.evc-card p{color:rgba(255,255,255,.78);line-height:1.75;font-size:.95rem;margin-bottom:1.3rem}
+.evc-card .btn{align-self:flex-start}
+@media (max-width:820px){.evc-grid{grid-template-columns:1fr}}
