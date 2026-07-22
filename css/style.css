@@ -440,6 +440,19 @@ section{position:relative}
 }
 @media (max-width:900px){.event-feature{grid-template-columns:1fr}.event-feature .media{min-height:280px}}
 
+/* ----- See all events link ----- */
+.events-more{margin-top:2.2rem;text-align:center}
+.see-all{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-weight:800;font-size:.92rem;letter-spacing:.02em;color:var(--green-700);
+  padding:.85rem 1.6rem;border:1.5px solid rgba(31,95,63,.28);border-radius:999px;
+  background:#fff;box-shadow:var(--shadow-sm);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease),color .3s var(--ease);
+}
+.see-all .arr{color:var(--gold-500);transition:transform .3s var(--ease)}
+.see-all:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--gold-500);color:var(--green-900)}
+.see-all:hover .arr{transform:translateX(5px)}
+
 /* ----- Past events grid ----- */
 .past-head{margin:3.5rem 0 1.6rem}
 .past-head .eyebrow{display:block;margin-bottom:.5rem}
