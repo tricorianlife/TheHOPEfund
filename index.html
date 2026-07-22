@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The HOPE Fund | Upper GI &amp; Pancreatic Cancer Research Charity, Australia</title>
-<meta name="description" content="Founded by Australian surgeons, The HOPE Fund funds research, education and patient care for upper GI and HPB cancers: pancreatic, liver, stomach, biliary and oesophageal. Every dollar tracked and accountable. Donations tax-deductible.">
+<title>The HOPE Fund | Upper GI &amp; Pancreatic Cancer Charity</title>
+<meta name="description" content="Founded by Australian surgeons, The HOPE Fund funds upper GI and pancreatic cancer research, education and patient care. DGR status: gifts tax-deductible.">
 <meta name="theme-color" content="#10301f">
 <!-- ===== SECURITY =====
      Content-Security-Policy: blocks inline executable scripts and restricts
@@ -31,7 +31,7 @@
 <meta name="twitter:image" content="https://www.thehopefund.org.au/img/hero-canopy-1600.webp">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
 <link rel="apple-touch-icon" href="/img/favicon-180.png">
-<link rel="preload" as="image" href="/img/hero-canopy-1600.webp" imagesrcset="/img/hero-canopy-800.webp 800w, /img/hero-canopy-1600.webp 1024w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="/img/hero-canopy-1600.webp" imagesrcset="/img/hero-canopy-800.webp 800w, /img/hero-canopy-1600.webp 1600w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="/fonts/fonts.css">
 <link rel="stylesheet" href="/css/style.css">
 <script type="application/ld+json">
@@ -52,7 +52,9 @@
       "address":{"@type":"PostalAddress","streetAddress":"Suite 301, Level 3, 100 Victoria Parade","addressLocality":"East Melbourne","addressRegion":"VIC","postalCode":"3002","addressCountry":"AU"},
       "description":"Founded by Australian surgeons, The HOPE Fund funds research, education and patient care for upper GI and HPB cancers including pancreatic, liver, stomach, biliary and oesophageal cancers. Every dollar donated is tracked and accountable.",
       "areaServed":"AU",
-      "knowsAbout":["pancreatic cancer","liver cancer","stomach cancer","biliary tract cancer","oesophageal cancer","upper GI surgery","hepatobiliary surgery","cancer research","surgical education","patient care"]
+      "knowsAbout":["pancreatic cancer","liver cancer","stomach cancer","biliary tract cancer","oesophageal cancer","upper GI surgery","hepatobiliary surgery","cancer research","surgical education","patient care"],
+      "contactPoint":{"@type":"ContactPoint","contactType":"donations and general enquiries","email":"contact@thehopefund.org.au","areaServed":"AU"},
+      "sameAs":["https://www.acnc.gov.au/charity/charities/97668e95-99e3-e811-a960-000d3ad232c2/profile"]
     },
     {
       "@type":"WebSite",
@@ -74,11 +76,11 @@
     {
       "@type":"FAQPage",
       "mainEntity":[
-        {"@type":"Question","name":"Is my donation to The HOPE Fund tax-deductible?","acceptedAnswer":{"@type":"Answer","text":"Yes. The HOPE Fund holds Deductible Gift Recipient (DGR) status with the Australian Tax Office, so donations of AUD $2.00 or more are tax-deductible. The HOPE Fund is also registered as a charity with the Australian Charities and Not-for-Profits Commission (ACNC)."}},
-        {"@type":"Question","name":"How is my donation used?","acceptedAnswer":{"@type":"Answer","text":"Donations fund research, education and patient-care programs for upper GI and HPB cancers. Every dollar is tracked and allocated to a specific project, so donors can see the impact of their gift. Annual reporting is published through the ACNC."}},
-        {"@type":"Question","name":"What cancers does The HOPE Fund support?","acceptedAnswer":{"@type":"Answer","text":"The HOPE Fund supports upper GI and hepatobiliary (HPB) cancers, including pancreatic, liver, stomach, biliary tract and oesophageal cancers, some of the most underfunded cancers with the lowest survival rates."}},
-        {"@type":"Question","name":"Who founded The HOPE Fund?","acceptedAnswer":{"@type":"Answer","text":"The HOPE Fund was founded in Melbourne in 2018 by a group of hepatic, pancreatic, biliary and upper gastrointestinal surgeons and nurses who came together to transform outcomes for their patients through research, education and patient care."}},
-        {"@type":"Question","name":"How can I support The HOPE Fund?","acceptedAnswer":{"@type":"Answer","text":"You can donate directly, become a Champion of HOPE through ongoing giving, sponsor events such as A Night of HOPE, or partner as an organisation. Contact contact@thehopefund.org.au to get involved."}}
+        {"@type":"Question","name":"Is my donation tax-deductible?","acceptedAnswer":{"@type":"Answer","text":"Yes. The HOPE Fund holds Deductible Gift Recipient (DGR) status with the Australian Tax Office, so donations of AUD $2.00 or more are tax-deductible. You will receive a receipt for every gift."}},
+        {"@type":"Question","name":"How is my donation used?","acceptedAnswer":{"@type":"Answer","text":"Donations fund research, education and patient-care programs for upper GI and HPB cancers. Every dollar is tracked and allocated to a specific project, so you can see the impact of your gift. Our annual reporting is published through the ACNC."}},
+        {"@type":"Question","name":"What cancers does The HOPE Fund support?","acceptedAnswer":{"@type":"Answer","text":"Upper GI and hepatobiliary (HPB) cancers: pancreatic, liver, stomach, biliary tract and oesophageal cancers. These are among the most underfunded cancers, with some of the lowest survival rates, which is exactly why we focus here."}},
+        {"@type":"Question","name":"Who founded The HOPE Fund?","acceptedAnswer":{"@type":"Answer","text":"A group of Melbourne's hepatic, pancreatic, biliary and upper GI surgeons and nurses, who came together in 2018 to transform outcomes for their patients through research, education and patient care."}},
+        {"@type":"Question","name":"How else can I support the fund?","acceptedAnswer":{"@type":"Answer","text":"Become a Champion of HOPE through ongoing giving, sponsor an event like A Night of HOPE, partner with us as an organisation, or share a story of hope. Email contact@thehopefund.org.au and we will find the right fit."}}
       ]
     }
   ]
@@ -92,8 +94,10 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a class="brand" href="#top" aria-label="The HOPE Fund home">
-      <img class="logo-light" src="/img/logo-white.webp" alt="The HOPE Fund" width="170" height="56">
-      <img class="logo-dark" src="/img/logo-colour.webp" alt="The HOPE Fund" width="83" height="56">
+      <span class="logo-stack">
+        <img class="logo-light" src="/img/logo-white.webp" alt="The HOPE Fund" width="170" height="56">
+        <img class="logo-dark" src="/img/logo-colour.webp" alt="The HOPE Fund" width="83" height="56">
+      </span>
     </a>
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
@@ -120,7 +124,7 @@
 <section class="hero" id="top">
   <div class="hero-bg">
     <img src="/img/hero-canopy-1600.webp"
-         srcset="/img/hero-canopy-800.webp 800w, /img/hero-canopy-1600.webp 1024w"
+         srcset="/img/hero-canopy-800.webp 800w, /img/hero-canopy-1600.webp 1600w"
          sizes="100vw" width="1024" height="576" alt="Golden sunlight streaming through a tree canopy" fetchpriority="high">
   </div>
   <div class="particles" aria-hidden="true"></div>
@@ -230,10 +234,10 @@
       <p class="lead" style="margin:0 auto">Every breakthrough begins with a patient, a question, and the generosity of people who believe in better outcomes. Here is what your support has made possible.</p>
     </div>
     <div class="impact-grid">
-      <div class="impact-card reveal"><div class="num"><span data-count="13">0</span></div><div class="lbl">Active research projects</div></div>
-      <div class="impact-card reveal" data-delay="1"><div class="num"><span data-count="1480">0</span><span class="plus">+</span></div><div class="lbl">Patients &amp; samples contributed</div></div>
-      <div class="impact-card reveal" data-delay="2"><div class="num"><span data-count="16">0</span></div><div class="lbl">Peer-reviewed papers published</div></div>
-      <div class="impact-card reveal" data-delay="3"><div class="num"><span data-count="300">0</span><span class="plus">+</span></div><div class="lbl">Guests at our 2025 Gala</div></div>
+      <div class="impact-card reveal"><div class="num"><span data-count="13">13</span></div><div class="lbl">Active research projects</div></div>
+      <div class="impact-card reveal" data-delay="1"><div class="num"><span data-count="1480">1,480</span><span class="plus">+</span></div><div class="lbl">Patients &amp; samples contributed</div></div>
+      <div class="impact-card reveal" data-delay="2"><div class="num"><span data-count="16">16</span></div><div class="lbl">Peer-reviewed papers published</div></div>
+      <div class="impact-card reveal" data-delay="3"><div class="num"><span data-count="300">300</span><span class="plus">+</span></div><div class="lbl">Guests at our 2025 Gala</div></div>
     </div>
     <div class="impact-quote reveal">
       <blockquote>&ldquo;We&rsquo;re not just trying to find cancer earlier. We&rsquo;re trying to spare patients the pain of unnecessary treatments, and give them back more time, more options, and more hope.&rdquo;</blockquote>

@@ -1,6 +1,9 @@
 /* THE HOPE FUND - interactions (vanilla, no deps) */
 (function(){
   "use strict";
+  /* Flag JS availability so reveal/count-up styles only apply when JS runs.
+     Without this class the page stays fully visible (no-JS resilience). */
+  document.documentElement.classList.add("js");
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* Header scroll state */
@@ -70,14 +73,14 @@
       entries.forEach(function(e){
         if(e.isIntersecting){ animateCount(e.target); cio.unobserve(e.target); }
       });
-    }, {threshold:0.5});
+    }, {threshold:0.12, rootMargin:"0px 0px -40px 0px"});
     counters.forEach(function(el){ cio.observe(el); });
   }
 
-  /* Hero floating gold particles */
+  /* Hero floating gold particles (kept light: 10, compositor-only) */
   var particles = document.querySelector(".particles");
   if(particles && !reduced){
-    for(var i=0;i<16;i++){
+    for(var i=0;i<10;i++){
       var s = document.createElement("i");
       s.style.left = (Math.random()*100) + "%";
       s.style.bottom = (Math.random()*30) + "%";
@@ -86,6 +89,15 @@
       s.style.width = s.style.height = (3 + Math.random()*4) + "px";
       particles.appendChild(s);
     }
+  }
+
+  /* Pause hero ambient animations once the hero scrolls out of view (GPU). */
+  var hero = document.querySelector(".hero");
+  if(hero && !reduced && "IntersectionObserver" in window){
+    var hio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ hero.classList.toggle("off", !e.isIntersecting); });
+    }, {threshold:0});
+    hio.observe(hero);
   }
 
   /* Contact form - opens the visitor's own email app (mailto).
