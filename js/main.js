@@ -126,4 +126,115 @@
     window.addEventListener("scroll", fabTick, {passive:true});
     fabTick();
   }
+
+  /* ============================================================
+     Donate page widget
+     Monthly / one-off toggle, amount selection, live impact line,
+     and CTA that points at the correct hosted payment endpoint.
+     Payments are handled by the PCI-compliant gateway (PayWay);
+     this page never collects card details.
+     ============================================================ */
+  var widget = document.querySelector(".donate-widget");
+  if(widget){
+    var URL_MONTHLY = "https://www.payway.com.au/RegularSignUp?ClientNumber=Q31292&AddressRequired=false&CustomerNumber=&CustomerName=&FirstPaymentDate=";
+    var URL_ONCE    = "https://www.payway.com.au/MakePayment?BillerCode=312926";
+
+    var freqToggle = widget.querySelector(".freq-toggle");
+    var freqBtns   = widget.querySelectorAll(".freq-btn");
+    var amtBtns    = widget.querySelectorAll(".amt-btn");
+    var custom     = widget.querySelector(".amt-custom input");
+    var impactEl   = widget.querySelector(".dw-impact span:last-child");
+    var cta        = widget.querySelector(".dw-cta");
+    var altLink    = widget.querySelector(".dw-alt a");
+
+    var state = { freq:"monthly", amount:50 };
+
+    /* Framing copy: what a gift at this level helps make possible. */
+    function impactFor(freq, amt){
+      if(!amt || amt < 2){
+        return "Every gift of $2 or more is tax-deductible and is allocated to a named research, education or patient-care project.";
+      }
+      if(freq === "monthly"){
+        if(amt >= 200) return "A monthly gift of $" + amt + " helps sustain a clinical research assistant and keeps our trials moving, all year round.";
+        if(amt >= 100) return "A monthly gift of $" + amt + " helps fund the patient samples and data that power our cancer registries.";
+        if(amt >= 50)  return "A monthly gift of $" + amt + " helps train the next generation of upper GI surgeons through our fellowships.";
+        return "A monthly gift of $" + amt + " provides steady, dependable support for the research teams working on the toughest cancers.";
+      }
+      if(amt >= 500) return "A gift of $" + amt + " can help fund a surgical fellow\u2019s training placement with the world\u2019s leading units.";
+      if(amt >= 250) return "A gift of $" + amt + " can help equip a research project with the laboratory resources it needs.";
+      if(amt >= 100) return "A gift of $" + amt + " can help support a patient through our recovery and rehabilitation programs.";
+      if(amt >= 50)  return "A gift of $" + amt + " can help contribute to the clinical samples that drive early-detection research.";
+      return "A gift of $" + amt + " goes straight to work on research, education and patient care for upper GI and HPB cancers.";
+    }
+
+    function render(){
+      /* Toggle indicator + active states */
+      freqToggle.setAttribute("data-freq", state.freq);
+      freqBtns.forEach(function(b){
+        b.classList.toggle("active", b.getAttribute("data-freq") === state.freq);
+        b.setAttribute("aria-pressed", b.getAttribute("data-freq") === state.freq ? "true" : "false");
+      });
+      /* Amount buttons */
+      amtBtns.forEach(function(b){
+        b.classList.toggle("active", parseInt(b.getAttribute("data-amt"),10) === state.amount);
+      });
+      /* Impact line */
+      if(impactEl){ impactEl.textContent = impactFor(state.freq, state.amount); }
+      /* CTA endpoint + label */
+      if(cta){
+        cta.setAttribute("href", state.freq === "monthly" ? URL_MONTHLY : URL_ONCE);
+        var label = cta.querySelector(".lbl");
+        if(label){
+          label.textContent = state.freq === "monthly"
+            ? "Give $" + state.amount + " monthly"
+            : "Give $" + state.amount + " once";
+        }
+      }
+      /* Alternate link flips to the other option */
+      if(altLink){
+        if(state.freq === "monthly"){
+          altLink.textContent = "Prefer a one-off gift?";
+          altLink.setAttribute("data-freq", "once");
+        } else {
+          altLink.textContent = "Prefer to give monthly?";
+          altLink.setAttribute("data-freq", "monthly");
+        }
+      }
+    }
+
+    freqBtns.forEach(function(b){
+      b.addEventListener("click", function(){
+        state.freq = b.getAttribute("data-freq");
+        render();
+      });
+    });
+
+    amtBtns.forEach(function(b){
+      b.addEventListener("click", function(){
+        state.amount = parseInt(b.getAttribute("data-amt"),10);
+        if(custom){ custom.value = ""; }
+        render();
+      });
+    });
+
+    if(custom){
+      custom.addEventListener("input", function(){
+        var v = parseInt(custom.value.replace(/[^0-9]/g,""),10);
+        state.amount = isNaN(v) ? 0 : v;
+        amtBtns.forEach(function(b){ b.classList.remove("active"); });
+        render();
+      });
+    }
+
+    if(altLink){
+      altLink.addEventListener("click", function(ev){
+        ev.preventDefault();
+        state.freq = altLink.getAttribute("data-freq");
+        render();
+        widget.scrollIntoView({behavior: reduced ? "auto" : "smooth", block:"center"});
+      });
+    }
+
+    render();
+  }
 })();
