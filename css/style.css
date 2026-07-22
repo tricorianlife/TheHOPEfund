@@ -41,6 +41,10 @@ body{
   background:var(--paper);
   line-height:1.65;
   font-size:17px;
+  /* Prevent decorative elements (e.g. the mission ring) from causing
+     horizontal scroll on small screens. clip (not hidden) so the sticky
+     story portrait keeps working. */
+  overflow-x:clip;
 }
 img{max-width:100%;height:auto;display:block}
 a{color:var(--green-700);text-decoration:none}
@@ -223,7 +227,12 @@ section{position:relative}
   border:1.5px dashed var(--gold-500);opacity:.6;animation:spin 30s linear infinite;
 }
 @keyframes spin{to{transform:rotate(360deg)}}
-@media (max-width:900px){.mission-grid{grid-template-columns:1fr}.mission-visual{margin-top:1rem}}
+@media (max-width:900px){
+  .mission-grid{grid-template-columns:1fr}
+  .mission-visual{margin-top:1rem}
+  /* keep the decorative ring inside the viewport on small screens */
+  .mission-visual .ring{top:-1.2rem;right:.6rem;width:90px;height:90px}
+}
 
 /* ============================================================
    LOGO STORY (biliary tree)
@@ -1071,3 +1080,62 @@ section{position:relative}
 .evc-card p{color:rgba(255,255,255,.78);line-height:1.75;font-size:.95rem;margin-bottom:1.3rem}
 .evc-card .btn{align-self:flex-start}
 @media (max-width:820px){.evc-grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   MOBILE POLISH (Android + iPhone)
+   - enlarge tap targets to comfortable touch size
+   - keep decorative micro-labels legible
+   - iOS safe-area padding for notched / home-indicator devices
+   ============================================================ */
+
+/* Comfortable tap targets for text links across the site.
+   min-height 44px matches Apple's HIG; inline-flex keeps them
+   aligned with surrounding copy. */
+@media (max-width:768px){
+  .footer-col a,
+  .footer-bottom a,
+  .podcast-card .listen,
+  .dw-alt a,
+  .crumbs a,
+  .program-card .more,
+  .story-card .read,
+  .storyhub-card .read,
+  .rblock .more,
+  .see-all{
+    display:inline-flex;align-items:center;min-height:44px;
+  }
+  /* inline links inside long-form copy (partner names, contact emails):
+     give them a comfortable touch height without breaking text flow */
+  .prose a{display:inline-flex;align-items:center;min-height:44px}
+  /* footer link rows: a little breathing room between 44px targets */
+  .footer-col ul{gap:.1rem}
+  /* decorative uppercase micro-labels: lift from ~11px to a readable size */
+  .program-card .thumb .tag,
+  .rblock .tag,
+  .storyhub-card .photo .badge,
+  .podcast-card .dur,
+  .ev-date .dow,
+  .ev-date .time .k,
+  .ev-detail .tx .k,
+  .dw-head .dgr,
+  .wm-panel .k,
+  .event-meta .m .k,
+  .contact-info .k,
+  .event-badge,
+  .past-card .yr{
+    font-size:.78rem;
+  }
+}
+
+/* iOS safe areas: keep content clear of the notch / dynamic island
+   (top) and the home indicator (bottom). viewport-fit=cover is
+   set in the <meta viewport> on every page. */
+@supports (padding: env(safe-area-inset-bottom)){
+  .site-header{padding-top:calc(1.1rem + env(safe-area-inset-top))}
+  .site-footer{padding-bottom:env(safe-area-inset-bottom)}
+  .donate-fab{bottom:calc(1.4rem + env(safe-area-inset-bottom))}
+  /* keep the fixed mobile drawer clear of the home indicator too */
+  @media (max-width:960px){
+    .nav-links{padding-bottom:calc(2.4rem + env(safe-area-inset-bottom))}
+  }
+}
