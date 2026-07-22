@@ -1,4 +1,4 @@
-/* THE HOPE FUND — interactions (vanilla, no deps) */
+/* THE HOPE FUND - interactions (vanilla, no deps) */
 (function(){
   "use strict";
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -88,7 +88,7 @@
     }
   }
 
-  /* Contact form — opens the visitor's own email app (mailto).
+  /* Contact form - opens the visitor's own email app (mailto).
      Nothing is stored on this website; the message is sent from their inbox. */
   var form = document.querySelector(".contact-form form, form.contact");
   if(form){
