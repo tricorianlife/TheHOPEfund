@@ -319,16 +319,16 @@
       else if(e.key === "ArrowRight") go(current + 1);
     });
 
-    var startX = 0, endX = 0, swiping = false;
-    cara.addEventListener("touchstart", function(e){ startX = e.touches[0].clientX; endX = startX; swiping = true; }, {passive:true});
+    var startX = 0, lastX = 0, swiping = false;
+    cara.addEventListener("touchstart", function(e){ startX = e.touches[0].clientX; lastX = startX; swiping = true; }, {passive:true});
+    cara.addEventListener("touchmove", function(e){ if(swiping) lastX = e.touches[0].clientX; }, {passive:true});
     cara.addEventListener("touchend", function(){
       if(swiping){
-        var delta = startX - (endX || startX);
-        if(Math.abs(delta) > 50){ go(current + (delta > 0 ? 1 : -1)); }
-        swiping = false; startX = 0; endX = 0;
+        var delta = startX - lastX;
+        if(Math.abs(delta) > 40){ go(current + (delta > 0 ? 1 : -1)); }
+        swiping = false; startX = 0; lastX = 0;
       }
     }, {passive:true});
-    cara.addEventListener("touchmove", function(e){ if(swiping) endX = e.touches[0].clientX; }, {passive:true});
 
     go(0);
   }
