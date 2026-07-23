@@ -993,7 +993,7 @@ section{position:relative}
   background:var(--cream);border:1px solid var(--line);border-left:4px solid var(--gold-500);
   border-radius:0 16px 16px 0;padding:1.7rem 1.9rem;
 }
-.team-intro .spec h3{font-size:1.05rem;color:var(--green-800);margin-bottom:.8rem}
+.team-intro .spec h2{font-size:1.05rem;color:var(--green-800);margin-bottom:.8rem}
 .team-intro .spec p{font-size:.95rem;color:var(--ink-soft);margin:0;line-height:1.75}
 @media (max-width:900px){.team-intro .cols{grid-template-columns:1fr}}
 
