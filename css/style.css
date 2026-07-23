@@ -159,6 +159,8 @@ html.js .reveal.in{opacity:1;transform:none}
 .site-header.scrolled .drop-btn{color:var(--green-800)}
 .drop-btn:hover,.has-drop:focus-within .drop-btn{color:var(--gold-400)}
 .site-header.scrolled .drop-btn:hover,.site-header.scrolled .has-drop:focus-within .drop-btn{color:var(--gold-600)}
+.site-header.page .drop-btn{color:var(--green-800)}
+.site-header.page .drop-btn:hover,.site-header.page .has-drop:focus-within .drop-btn{color:var(--gold-600)}
 .has-drop:focus-within .drop-btn .chev,.has-drop:hover .drop-btn .chev{transform:rotate(225deg) translateY(-1px)}
 .drop-menu{
   position:absolute;top:calc(100% + .9rem);left:50%;transform:translate(-50%,8px);
