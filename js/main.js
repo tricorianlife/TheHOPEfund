@@ -304,7 +304,10 @@
         else if(off === 2 || off === -(n - 2)) c.classList.add("far-next");
         else c.classList.add("hidden");
       });
-      dots.forEach(function(d, i){ d.classList.toggle("active", i === current); });
+      dots.forEach(function(d, i){
+        d.classList.toggle("active", i === current);
+        d.setAttribute("aria-selected", i === current ? "true" : "false");
+      });
     }
 
     if(prevBtn) prevBtn.addEventListener("click", function(){ go(current - 1); });
