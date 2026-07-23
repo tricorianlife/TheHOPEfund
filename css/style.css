@@ -1099,6 +1099,109 @@ section{position:relative}
 .podcast-featured-meta p{color:var(--ink-soft);font-size:.98rem;max-width:640px;line-height:1.65}
 
 /* ============================================================
+   GALA PHOTO FILMSTRIP (events page)
+   A horizontal, snap-scrolling strip of mixed-ratio frames from
+   A Night of HOPE. Heights are fixed; widths follow each photo's
+   own aspect ratio so nothing is awkwardly cropped.
+   ============================================================ */
+.ev-gallery{margin-top:3.2rem}
+.ev-gallery-head{display:flex;align-items:baseline;gap:1.2rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.ev-gallery-head h3{font-size:clamp(1.4rem,2.6vw,1.9rem);color:var(--green-900);margin:0}
+.filmstrip{
+  display:flex;gap:1rem;overflow-x:auto;padding-bottom:.6rem;
+  scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--gold-500) transparent;
+}
+.filmstrip::-webkit-scrollbar{height:6px}
+.filmstrip::-webkit-scrollbar-thumb{background:var(--gold-500);border-radius:99px}
+.filmstrip::-webkit-scrollbar-track{background:rgba(197,160,40,.12);border-radius:99px}
+.fs-item{
+  flex:none;scroll-snap-align:start;position:relative;border-radius:14px;overflow:hidden;
+  box-shadow:var(--shadow-sm);background:var(--green-900);
+}
+.fs-item img{height:320px;width:auto;display:block;object-fit:cover;transition:transform .7s var(--ease)}
+.fs-item::after{content:"";position:absolute;inset:0;border:1px solid rgba(197,160,40,0);border-radius:14px;transition:border-color .4s var(--ease);pointer-events:none}
+.fs-item:hover img{transform:scale(1.05)}
+.fs-item:hover::after{border-color:var(--line-gold)}
+@media (max-width:640px){.fs-item img{height:250px}}
+
+/* ============================================================
+   SURVIVORSHIP CLINIC (events page) + THIS YEAR'S FOCUS (home)
+   Shared dark treatment: deep green field with a soft gold glow,
+   a snap-scrolling portrait reel, and an animated goal banner.
+   ============================================================ */
+.survivorship,.focus{
+  background:var(--green-950);color:#fff;position:relative;overflow:hidden;
+}
+.survivorship::before,.focus::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(820px 560px at 88% 12%,rgba(197,160,40,.13),transparent 62%),
+             radial-gradient(700px 520px at 6% 92%,rgba(42,107,70,.4),transparent 62%);
+}
+.survivorship .container,.focus .container{position:relative;z-index:1}
+.survivorship h2,.focus h2{color:#fff}
+.survivorship .lead,.focus .lead{color:rgba(255,255,255,.82)}
+.survivorship p{color:rgba(255,255,255,.75);line-height:1.75}
+.survivorship .surv-copy>p+p{margin-top:1.1rem}
+
+/* --- events page: two-column layout --- */
+.surv-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+/* let the reel column shrink below its scroll content width */
+.surv-grid>*{min-width:0}
+.surv-goal{
+  display:flex;align-items:center;gap:1.5rem;margin:2rem 0;
+  padding:1.4rem 1.7rem;border-radius:14px;
+  background:rgba(197,160,40,.1);border:1px solid rgba(197,160,40,.32);border-left:4px solid var(--gold-500);
+}
+.goal-num{
+  font-family:var(--serif);font-weight:600;line-height:1;color:var(--gold-400);
+  font-size:clamp(2.4rem,4.6vw,3.4rem);font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.goal-num .cur{font-size:.62em;vertical-align:.14em;margin-right:.06em;color:var(--gold-300)}
+.goal-txt strong{display:block;color:#fff;font-size:1.02rem;letter-spacing:.01em}
+.goal-txt span{display:block;margin-top:.3rem;color:rgba(255,255,255,.68);font-size:.9rem;line-height:1.55}
+.surv-pillars{list-style:none;margin:2rem 0 2.4rem;display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 1.8rem}
+.surv-pillars li{padding-left:1.1rem;border-left:2px solid rgba(197,160,40,.55);display:flex;flex-direction:column;gap:.3rem}
+.surv-pillars strong{color:var(--gold-300);font-size:.98rem}
+.surv-pillars span{color:rgba(255,255,255,.7);font-size:.88rem;line-height:1.55}
+
+/* --- shared portrait reel --- */
+.reel{
+  display:flex;gap:1rem;overflow-x:auto;padding:.4rem .2rem 1rem;
+  scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--gold-500) transparent;
+}
+.reel::-webkit-scrollbar{height:6px}
+.reel::-webkit-scrollbar-thumb{background:var(--gold-500);border-radius:99px}
+.reel::-webkit-scrollbar-track{background:rgba(197,160,40,.14);border-radius:99px}
+.reel-item{
+  flex:none;width:min(236px,60vw);scroll-snap-align:start;border-radius:14px;overflow:hidden;
+  box-shadow:0 18px 44px rgba(0,0,0,.38);border:1px solid rgba(197,160,40,.25);
+  transition:transform .45s var(--ease),border-color .45s var(--ease);background:var(--green-900);
+}
+.reel-item img{width:100%;height:auto;display:block}
+.reel-item:hover{transform:translateY(-8px);border-color:var(--line-gold)}
+.reel-cap{margin-top:.4rem;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+/* --- home page: full-width reel + goal footer row --- */
+.focus .section-head{max-width:820px}
+.focus-reel{margin-top:.5rem}
+.focus-foot{
+  display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;
+  margin-top:1.6rem;padding-top:2rem;border-top:1px solid rgba(197,160,40,.25);
+}
+.focus-foot .surv-goal{margin:0;background:transparent;border:none;border-left:4px solid var(--gold-500);padding:.2rem 0 .2rem 1.7rem}
+.focus-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+
+@media (max-width:960px){
+  .surv-grid{grid-template-columns:1fr}
+  .surv-reel{order:2}
+}
+@media (max-width:640px){
+  .surv-pillars{grid-template-columns:1fr}
+  .surv-goal{flex-direction:column;align-items:flex-start;gap:.8rem}
+  .reel-item{width:min(200px,58vw)}
+}
+
+/* ============================================================
    MOBILE POLISH (Android + iPhone)
    - enlarge tap targets to comfortable touch size
    - keep decorative micro-labels legible
