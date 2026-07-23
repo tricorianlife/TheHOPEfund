@@ -286,6 +286,8 @@
     cards.forEach(function(_, i){
       var d = document.createElement("button");
       d.className = "cara-3d-dot" + (i === 0 ? " active" : "");
+      d.setAttribute("role", "tab");
+      d.setAttribute("aria-selected", i === 0 ? "true" : "false");
       d.setAttribute("aria-label", "Image " + (i + 1));
       d.addEventListener("click", function(){ go(i); });
       dotsWrap.appendChild(d);
