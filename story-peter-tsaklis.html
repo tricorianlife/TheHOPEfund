@@ -51,15 +51,35 @@
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
     </button>
-    <nav aria-label="Primary">
+            <nav aria-label="Primary">
       <ul class="nav-links" id="nav">
-        <li><a href="index.html#mission">Mission</a></li>
-        <li><a href="index.html#research">Research</a></li>
+        <li class="has-drop">
+          <button class="drop-btn" type="button" aria-haspopup="true" aria-expanded="false">About <span class="chev" aria-hidden="true"></span></button>
+          <ul class="drop-menu">
+            <li class="dm-note">About</li>
+            <li><a href="index.html#mission">Our mission</a></li>
+            <li><a href="index.html#founded">Founded by surgeons</a></li>
+            <li><a href="index.html#story">The story in our logo</a></li>
+            <li><a href="index.html#people">Our people</a></li>
+            <li><a href="index.html#accountability">Accountability</a></li>
+            <li><a href="impact.html">Our impact</a></li>
+          </ul>
+        </li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="education.html">Education</a></li>
         <li><a href="stories.html">Stories</a></li>
-        <li><a href="our-team.html">Our People</a></li>
-        <li><a href="events.html">Events</a></li>
+        <li class="has-drop">
+          <button class="drop-btn" type="button" aria-haspopup="true" aria-expanded="false">Get involved <span class="chev" aria-hidden="true"></span></button>
+          <ul class="drop-menu">
+            <li class="dm-note">Get involved</li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="sponsor-us.html">Sponsor us</a></li>
+            <li><a href="podcasts.html">Podcasts</a></li>
+            <li><a href="index.html#champions">Champions of HOPE</a></li>
+          </ul>
+        </li>
         <li><a href="index.html#contact">Contact</a></li>
-        <li><a class="nav-donate" href="index.html#donate">Donate</a></li>
+        <li><a class="nav-donate" href="donate.html">Donate</a></li>
       </ul>
     </nav>
   </div>

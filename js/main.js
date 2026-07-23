@@ -35,6 +35,41 @@
     });
   }
 
+  /* Dropdown menus: keep aria-expanded in sync, close on Escape / outside click */
+  var drops = document.querySelectorAll(".nav-links li.has-drop");
+  drops.forEach(function(li){
+    var btn = li.querySelector(".drop-btn");
+    var menu = li.querySelector(".drop-menu");
+    if(!btn || !menu) return;
+    btn.addEventListener("click", function(){
+      var open = li.classList.toggle("force-open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    menu.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){
+        li.classList.remove("force-open");
+        btn.setAttribute("aria-expanded","false");
+      });
+    });
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key !== "Escape") return;
+    drops.forEach(function(li){
+      li.classList.remove("force-open");
+      var b = li.querySelector(".drop-btn");
+      if(b) b.setAttribute("aria-expanded","false");
+    });
+  });
+  document.addEventListener("click", function(e){
+    drops.forEach(function(li){
+      if(!li.contains(e.target)){
+        li.classList.remove("force-open");
+        var b = li.querySelector(".drop-btn");
+        if(b) b.setAttribute("aria-expanded","false");
+      }
+    });
+  });
+
   /* Reveal on scroll */
   var reveals = document.querySelectorAll(".reveal");
   if(reduced || !("IntersectionObserver" in window)){

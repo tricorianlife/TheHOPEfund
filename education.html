@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Education | Surgical Fellowships & Training | The HOPE Fund</title>
-<meta name="description" content="The HOPE Fund supports surgical training through fellowships and scholarships, partnering with St Vincent's Hospital and OESO to raise global standards in upper GI and HPB surgery.">
+<title>Education | Understanding Upper GI &amp; HPB Cancer | The HOPE Fund</title>
+<meta name="description" content="Plain-language education for patients and families: what upper GI and HPB cancers are, the types, treatment options, and how genetic testing and tumour profiling can guide care. Reviewed by our surgeons.">
 <meta name="theme-color" content="#10301f">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="canonical" href="https://www.thehopefund.org.au/education.html">
-<meta property="og:title" content="Education | The HOPE Fund">
-<meta property="og:description" content="The HOPE Fund supports surgical training through fellowships and scholarships, raising global standards in upper GI and HPB surgery.">
+<meta property="og:title" content="Understanding Upper GI &amp; HPB Cancer | The HOPE Fund">
+<meta property="og:description" content="Plain-language education for patients and families on upper GI and HPB cancers, treatment options and genetic testing. Reviewed by our surgeons.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.thehopefund.org.au/education.html">
 <meta property="og:image" content="https://www.thehopefund.org.au/img/matt-read-hubrecht.webp">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Education | The HOPE Fund">
-<meta name="twitter:description" content="The HOPE Fund supports surgical training through fellowships and scholarships, raising global standards in upper GI and HPB surgery.">
+<meta name="twitter:title" content="Understanding Upper GI &amp; HPB Cancer | The HOPE Fund">
+<meta name="twitter:description" content="Plain-language education for patients and families on upper GI and HPB cancers, treatment options and genetic testing. Reviewed by our surgeons.">
 <meta name="twitter:image" content="https://www.thehopefund.org.au/img/matt-read-hubrecht.webp">
 <meta property="og:locale" content="en_AU">
 <meta property="og:site_name" content="The HOPE Fund">
@@ -27,9 +27,11 @@
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"WebPage",
-  "name":"Education",
+  "@type":"MedicalWebPage",
+  "name":"Understanding Upper GI and HPB Cancer",
   "url":"https://www.thehopefund.org.au/education.html",
+  "about":["pancreatic cancer","liver cancer","stomach cancer","biliary tract cancer","oesophageal cancer"],
+  "audience":{"@type":"PatientsAudience"},
   "publisher":{"@id":"https://www.thehopefund.org.au/#organisation"},
   "inLanguage":"en-AU"
 }
@@ -50,15 +52,35 @@
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
       <span></span><span></span><span></span>
     </button>
-    <nav aria-label="Primary">
+        <nav aria-label="Primary">
       <ul class="nav-links" id="nav">
-        <li><a href="index.html#mission">Mission</a></li>
+        <li class="has-drop">
+          <button class="drop-btn" type="button" aria-haspopup="true" aria-expanded="false">About <span class="chev" aria-hidden="true"></span></button>
+          <ul class="drop-menu">
+            <li class="dm-note">About</li>
+            <li><a href="index.html#mission">Our mission</a></li>
+            <li><a href="index.html#founded">Founded by surgeons</a></li>
+            <li><a href="index.html#story">The story in our logo</a></li>
+            <li><a href="index.html#people">Our people</a></li>
+            <li><a href="index.html#accountability">Accountability</a></li>
+            <li><a href="impact.html">Our impact</a></li>
+          </ul>
+        </li>
         <li><a href="research.html">Research</a></li>
+        <li><a href="education.html">Education</a></li>
         <li><a href="stories.html">Stories</a></li>
-        <li><a href="our-team.html">Our People</a></li>
-        <li><a href="events.html">Events</a></li>
+        <li class="has-drop">
+          <button class="drop-btn" type="button" aria-haspopup="true" aria-expanded="false">Get involved <span class="chev" aria-hidden="true"></span></button>
+          <ul class="drop-menu">
+            <li class="dm-note">Get involved</li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="sponsor-us.html">Sponsor us</a></li>
+            <li><a href="podcasts.html">Podcasts</a></li>
+            <li><a href="index.html#champions">Champions of HOPE</a></li>
+          </ul>
+        </li>
         <li><a href="index.html#contact">Contact</a></li>
-        <li><a class="nav-donate" href="index.html#donate">Donate</a></li>
+        <li><a class="nav-donate" href="donate.html">Donate</a></li>
       </ul>
     </nav>
   </div>
@@ -70,53 +92,273 @@
 <section class="page-hero">
   <div class="container">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span class="sep">&rsaquo;</span><span>Education</span></nav>
-    <h1>Training the surgeons <span class="accent">of tomorrow.</span></h1>
-    <p class="lead">Many of our research projects are in partnership with St Vincent&rsquo;s Hospital, a teaching hospital where registrars on accredited surgical training programs with RACS are supervised and trained.</p>
+    <h1>Understanding your <span class="accent">diagnosis.</span></h1>
+    <p class="lead">A diagnosis of an upper GI or HPB cancer raises more questions than answers. This page explains, in plain language, what these cancers are, how they are treated, and why genetic testing may matter for you or someone you love. Written for patients and families, and reviewed by our surgeons.</p>
   </div>
 </section>
 
-<!-- ============ FELLOWSHIPS ============ -->
-<section class="section">
+<!-- ============ ON THIS PAGE ============ -->
+<nav class="edu-jump" aria-label="On this page">
+  <div class="container">
+    <a class="jl" href="#what">What is upper GI &amp; HPB</a>
+    <a class="jl" href="#cancers">The cancers</a>
+    <a class="jl" href="#treatment">Treatment options</a>
+    <a class="jl" href="#genetic">Genetic testing</a>
+    <a class="jl" href="#questions">Questions to ask</a>
+    <a class="jl" href="#professionals">For health professionals</a>
+  </div>
+</nav>
+
+<!-- ============ WHAT IS UPPER GI & HPB ============ -->
+<section class="section" id="what">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Fellowships</span>
-      <h2 class="h-section">Surgical fellowships with global reach.</h2>
+      <span class="eyebrow">Start here</span>
+      <h2 class="h-section">What do &ldquo;upper GI&rdquo; and &ldquo;HPB&rdquo; actually mean?</h2>
     </div>
     <div class="prose reveal">
-      <p>The HOPE Fund supports surgical training through fellowships, 18-month programs which provide specialty skills and contribute to higher global standards in surgical practice. Dr Keith Dindi, from rural Kenya, is one of the first graduates and is qualified as both a general and cardiothoracic surgeon.</p>
-      <p>To facilitate training, we work with <a href="http://www.oeso.org/centers.html" target="_blank" rel="noopener noreferrer">OESO</a> to ensure worldwide collaboration and high quality training. With Melbourne as a key centre to offer training, the program provides Dr Dindi with the necessary skillsets through six months of rotations in cardiac surgery, thoracic surgery and general / vascular surgery. During this period fellows learn about the assessment and management of individual conditions and participate in the operative management of patients under direct supervision.</p>
+      <p>These are shorthand terms your care team will use often. Knowing what they refer to makes every appointment easier to follow.</p>
+      <p><strong>Upper GI</strong> (upper gastrointestinal) refers to the upper part of the digestive system: the <strong>oesophagus</strong> (the food pipe), the <strong>stomach</strong>, and the first part of the small bowel (the <strong>duodenum</strong>). Food travels down the oesophagus, is broken down in the stomach, and passes into the duodenum, where digestion continues.</p>
+      <p><strong>HPB</strong> stands for <strong>hepato-pancreato-biliary</strong>. It covers three organs that work closely together to digest food:</p>
+      <p><strong>Hepato</strong> means the <strong>liver</strong>, the body&rsquo;s chemical factory. <strong>Pancreato</strong> means the <strong>pancreas</strong>, which produces digestive enzymes and hormones like insulin. <strong>Biliary</strong> refers to the <strong>bile ducts and gallbladder</strong>, the drainage network that carries bile from the liver and gallbladder into the bowel to help digest fat.</p>
+      <p>These organs sit close together and share a blood supply and drainage routes, which is why cancers in this region are grouped, studied and operated on together by specialist HPB and upper GI surgeons. In fact, the branching bile-duct network is so tree-like that surgeons call it the <strong>biliary tree</strong>, the very shape that inspired our logo.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ SCHOLARSHIP ============ -->
-<section class="section story-article">
+<!-- ============ THE CANCERS ============ -->
+<section class="section" id="cancers" style="background:var(--green-50)">
   <div class="container">
-    <div class="story-layout">
-      <aside class="story-portrait reveal">
-        <div class="frame"><img src="img/matt-read-hubrecht.webp" width="900" height="599" alt="Matthew Read helping to optimise the organoid model at the Hubrecht Institute in the Netherlands"></div>
-        <div class="caption">Matthew Read optimising the organoid model at the Hubrecht Institute, Netherlands</div>
-      </aside>
-      <div class="story-body">
-        <span class="kicker reveal">The inaugural scholarship program</span>
-        <h2 class="reveal">A scholarship that came home.</h2>
-        <p class="reveal">With our support, surgeon Mr Matthew Read completed a fellowship with a focus on robotic surgery at the University Medical Center in Utrecht, the Netherlands, and continued his research into oesophageal cancer.</p>
-        <p class="reveal">Since returning to St Vincent&rsquo;s as a consultant surgeon, Matthew has been highly effective in contributing to the hospital&rsquo;s surgical research program. He has established key international collaborations and furthered local research interests.</p>
-        <div class="pullquote reveal">&ldquo;The scholarship has given me unparalleled opportunities to learn from internationally renowned experts within my surgical specialty and to collaborate with leading researchers to optimise treatments for oesophageal cancer. I am fortunate to be back at St Vincent&rsquo;s as a consultant surgeon where I can use my knowledge and international connections to advance research programs in the hospital, and enable opportunities for international surgical team exchanges.&rdquo;<cite>Matthew Read</cite></div>
+    <div class="section-head reveal">
+      <span class="eyebrow">Know your diagnosis</span>
+      <h2 class="h-section">The cancers we focus on.</h2>
+      <p class="lead">Each of these begins in a different organ, but they share one thing: they are among the hardest cancers to detect early, which is why research and specialist care matter so much.</p>
+    </div>
+
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <span class="organ">Oesophagus</span>
+        <h3>Oesophageal cancer</h3>
+        <p>Begins in the lining of the food pipe. The two main types are adenocarcinoma (often linked to long-standing reflux) and squamous cell carcinoma. Early changes can be subtle, such as difficulty swallowing or persistent heartburn.</p>
+        <p class="aka">Also called: cancer of the gullet, oesophageal adenocarcinoma</p>
+      </div>
+
+      <div class="edu-card reveal" data-delay="1">
+        <span class="organ">Stomach</span>
+        <h3>Stomach (gastric) cancer</h3>
+        <p>Begins in the stomach, most often in the inner lining. Symptoms such as indigestion, feeling full quickly or unexplained weight loss are easy to mistake for everyday complaints, which is why it is often found at a later stage.</p>
+        <p class="aka">Also called: gastric cancer, gastric adenocarcinoma</p>
+      </div>
+
+      <div class="edu-card reveal" data-delay="2">
+        <span class="organ">Pancreas</span>
+        <h3>Pancreatic cancer</h3>
+        <p>Begins in the pancreas, most commonly in the ducts that carry digestive enzymes. It tends to grow quietly and spread early, so research into earlier detection, such as our pancreatic cyst registry, is a priority.</p>
+        <p class="aka">Also called: pancreatic adenocarcinoma, pancreatic ductal adenocarcinoma</p>
+      </div>
+
+      <div class="edu-card reveal">
+        <span class="organ">Liver</span>
+        <h3>Liver cancer</h3>
+        <p>Primary liver cancer begins in the liver itself, most often in people with long-standing liver disease or cirrhosis. The liver can also be a site where cancers from elsewhere spread, which your team will distinguish carefully.</p>
+        <p class="aka">Also called: hepatocellular carcinoma (HCC)</p>
+      </div>
+
+      <div class="edu-card reveal" data-delay="1">
+        <span class="organ">Bile ducts &amp; gallbladder</span>
+        <h3>Biliary tract cancer</h3>
+        <p>Begins in the bile ducts (cholangiocarcinoma) or the gallbladder. These cancers can block the flow of bile, causing jaundice, a yellowing of the skin and eyes, which is often the first noticeable sign.</p>
+        <p class="aka">Also called: cholangiocarcinoma, gallbladder cancer</p>
+      </div>
+
+      <div class="edu-card reveal" data-delay="2">
+        <span class="organ">Where the oesophagus meets the stomach</span>
+        <h3>Gastro-oesophageal junction cancer</h3>
+        <p>Begins where the oesophagus joins the stomach, an area often abbreviated as the GOJ or OG junction. It is treated by the same specialist teams as oesophageal and stomach cancers.</p>
+        <p class="aka">Also called: GOJ cancer, junctional adenocarcinoma</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ GRANTS TEASER ============ -->
+<!-- ============ TREATMENT OPTIONS ============ -->
+<section class="section" id="treatment">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">How care is planned</span>
+      <h2 class="h-section">How these cancers are treated.</h2>
+      <p class="lead">Treatment is decided by a multidisciplinary team, surgeons, oncologists, radiologists and nurses reviewing your case together. The plan depends on the cancer type, its stage, your overall health, and increasingly, the genetic profile of the tumour.</p>
+    </div>
+
+    <div class="edu-treat">
+      <div class="edu-treat-item reveal">
+        <div class="t-label">Surgery<small>Often the cornerstone</small></div>
+        <p>For many upper GI and HPB cancers, an operation to remove the tumour offers the best chance of cure. These are some of the most complex operations in surgery, which is why they are best done by high-volume specialist teams. Depending on the cancer, this may involve removing part of the oesophagus, stomach, pancreas, liver or bile ducts.</p>
+      </div>
+      <div class="edu-treat-item reveal">
+        <div class="t-label">Chemotherapy<small>Medicine that travels</small></div>
+        <p>Anti-cancer drugs that circulate through the whole body. Chemotherapy may be given before surgery to shrink a tumour (neoadjuvant), after surgery to reduce the risk of return (adjuvant), or as the main treatment when surgery is not suitable.</p>
+      </div>
+      <div class="edu-treat-item reveal">
+        <div class="t-label">Radiotherapy<small>Precise energy</small></div>
+        <p>High-energy beams targeted at the tumour, sometimes combined with chemotherapy (chemoradiation). It is used most often for oesophageal and some stomach and biliary cancers, either to shrink a tumour before surgery or to control symptoms.</p>
+      </div>
+      <div class="edu-treat-item reveal">
+        <div class="t-label">Targeted therapy<small>Attacking specific weaknesses</small></div>
+        <p>Drugs that block specific molecules a cancer needs to grow, for example the HER2 protein in some stomach and junction cancers. These only work if the tumour carries the target, which is why testing the tumour first matters.</p>
+      </div>
+      <div class="edu-treat-item reveal">
+        <div class="t-label">Immunotherapy<small>Unleashing your immune system</small></div>
+        <p>Treatments that help your own immune system recognise and attack cancer cells. They have changed outcomes for several upper GI cancers, particularly tumours that show specific markers such as MSI-H or high PD-L1.</p>
+      </div>
+    </div>
+
+    <p class="reveal" style="margin-top:2rem;color:var(--ink-soft);max-width:70ch;line-height:1.8">Many patients receive a combination of these, and clinical trials may offer access to the next generation of treatments. Ask your team whether a trial is appropriate for you.</p>
+  </div>
+</section>
+
+<!-- ============ GENETIC TESTING ============ -->
+<section class="section" id="genetic" style="background:var(--green-50)">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">A question worth asking</span>
+      <h2 class="h-section">Genetic testing and tumour profiling.</h2>
+      <p class="lead">One of the most important questions in modern cancer care: has my tumour been tested, and could the result change my treatment?</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>Every cancer carries changes, or <strong>mutations</strong>, in its DNA. Some of these changes drive the cancer to grow, and some of them can be targeted by specific drugs. <strong>Tumour profiling</strong> (sometimes called molecular or genomic testing) looks for these changes in a sample of the tumour, usually taken at biopsy or surgery.</p>
+      <p>This is different from testing the DNA you were born with, though both can matter. Profiling the <strong>tumour</strong> helps match you to targeted or immune treatments. Testing your <strong>inherited</strong> genes can reveal whether a cancer runs in a family and whether relatives should be screened.</p>
+    </div>
+
+    <div class="edu-callout reveal">
+      <span class="eyebrow">Why it can change your care</span>
+      <h3>Matching the treatment to the tumour.</h3>
+      <p>For several upper GI and HPB cancers, a specific test result can open the door to a treatment that would otherwise not be offered. Examples your team may discuss include:</p>
+
+      <div class="edu-steps">
+        <div class="edu-step">
+          <span class="num">1</span>
+          <div>
+            <h4>HER2 testing in stomach and junction cancers</h4>
+            <p>Tumours that overproduce the HER2 protein may respond to targeted drugs such as trastuzumab, added to chemotherapy. HER2 testing is now standard for advanced stomach and gastro-oesophageal junction cancers.</p>
+          </div>
+        </div>
+        <div class="edu-step">
+          <span class="num">2</span>
+          <div>
+            <h4>MSI and mismatch repair testing</h4>
+            <p>Tumours described as MSI-H or mismatch repair deficient have a particular weakness that immunotherapy can exploit. This test is increasingly done across upper GI cancers because a positive result can make immunotherapy an option.</p>
+          </div>
+        </div>
+        <div class="edu-step">
+          <span class="num">3</span>
+          <div>
+            <h4>BRCA testing in pancreatic cancer</h4>
+            <p>Some pancreatic cancers carry a BRCA1 or BRCA2 change, either inherited or found in the tumour. For selected patients, this can open the door to a class of targeted drugs called PARP inhibitors.</p>
+          </div>
+        </div>
+        <div class="edu-step">
+          <span class="num">4</span>
+          <div>
+            <h4>FGFR2 and IDH1 in bile duct cancer</h4>
+            <p>Cholangiocarcinoma is one of the cancers where tumour profiling has moved fastest. Changes in the FGFR2 or IDH1 genes can, in some cases, be matched to targeted therapies available through trials or special access.</p>
+          </div>
+        </div>
+        <div class="edu-step">
+          <span class="num">5</span>
+          <div>
+            <h4>Broader panels and clinical trials</h4>
+            <p>Comprehensive genomic profiling looks at many genes at once and can reveal rarer targets, such as NTRK fusions, that have treatments approved across cancer types. Results can also match you to clinical trials.</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:1.6rem">Not every tumour has a targetable change, and not every result leads to a different treatment. But testing is the only way to know, and it is a reasonable and increasingly routine thing to ask about.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUESTIONS TO ASK ============ -->
+<section class="section" id="questions">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Take this with you</span>
+      <h2 class="h-section">Questions to ask your oncologist.</h2>
+      <p class="lead">Appointments move quickly. Writing questions down beforehand helps you leave with the answers you need. These are a good starting point for a conversation about genetic testing and your options.</p>
+    </div>
+
+    <div class="edu-callout reveal">
+      <span class="eyebrow">About testing</span>
+      <h3>Start the conversation.</h3>
+      <ul class="edu-questions">
+        <li>Has my tumour been tested for biomarkers such as HER2, MSI or mismatch repair status?</li>
+        <li>Would comprehensive genomic profiling of my tumour be useful in my case?</li>
+        <li>Are there any inherited genetic tests I or my family should consider, such as BRCA?</li>
+        <li>If a targetable change is found, what treatments or clinical trials could it open up?</li>
+        <li>How would the test result change my treatment plan, and when would we know it?</li>
+      </ul>
+      <p style="margin-top:1.4rem">And about your care more broadly:</p>
+      <ul class="edu-questions">
+        <li>What is the goal of my treatment: cure, control, or symptom relief?</li>
+        <li>Is my case being reviewed by a multidisciplinary team, and is surgery an option?</li>
+        <li>Are there clinical trials I should know about?</li>
+        <li>Who do I contact between appointments if I have new symptoms or questions?</li>
+      </ul>
+    </div>
+
+    <div class="edu-disclaimer reveal">
+      <span class="ic" aria-hidden="true">&#9432;</span>
+      <p><strong>A note on this information.</strong> This page is general education, not medical advice. Every cancer and every person is different. Always discuss your diagnosis, testing and treatment options with your own care team, who know the details of your case. If you are unsure whether genetic testing is right for you, ask your oncologist directly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOR HEALTH PROFESSIONALS ============ -->
+<section class="section" id="professionals" style="background:var(--green-50)">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">For surgeons, nurses &amp; trainees</span>
+      <h2 class="h-section">Education for the profession.</h2>
+      <p class="lead">Education at The HOPE Fund runs in both directions. As well as informing patients, we invest in training the next generation of upper GI and HPB surgeons and the wider care team.</p>
+    </div>
+
+    <div class="prose reveal">
+      <p>Many of our research projects run in partnership with St Vincent&rsquo;s Hospital, a teaching hospital where registrars on accredited surgical training programs with RACS are supervised and trained.</p>
+      <h3>Surgical fellowships with global reach.</h3>
+      <p>The HOPE Fund supports surgical training through fellowships, 18-month programs which provide specialty skills and contribute to higher global standards in surgical practice. Dr Keith Dindi, from rural Kenya, is one of the first graduates and is qualified as both a general and cardiothoracic surgeon.</p>
+      <p>To facilitate training, we work with <a href="http://www.oeso.org/centers.html" target="_blank" rel="noopener noreferrer">OESO</a> to ensure worldwide collaboration and high quality training. With Melbourne as a key centre to offer training, the program provides Dr Dindi with the necessary skillsets through six months of rotations in cardiac surgery, thoracic surgery and general / vascular surgery.</p>
+    </div>
+
+    <div class="story-layout" style="margin-top:2.5rem">
+      <aside class="story-portrait reveal">
+        <div class="frame"><img src="img/matt-read-hubrecht.webp" width="900" height="599" alt="Matthew Read helping to optimise the organoid model at the Hubrecht Institute in the Netherlands" loading="lazy"></div>
+        <div class="caption">Matthew Read optimising the organoid model at the Hubrecht Institute, Netherlands</div>
+      </aside>
+      <div class="story-body">
+        <span class="kicker reveal">The inaugural scholarship program</span>
+        <h3 class="reveal" style="font-family:var(--serif);font-size:clamp(1.4rem,2.6vw,1.9rem);color:var(--green-800);margin:.4rem 0 1rem">A scholarship that came home.</h3>
+        <p class="reveal" style="color:var(--ink-soft);line-height:1.85">With our support, surgeon Mr Matthew Read completed a fellowship with a focus on robotic surgery at the University Medical Center in Utrecht, the Netherlands, and continued his research into oesophageal cancer. Since returning to St Vincent&rsquo;s as a consultant surgeon, Matthew has established key international collaborations and furthered local research interests.</p>
+        <div class="pullquote reveal">&ldquo;The scholarship has given me unparalleled opportunities to learn from internationally renowned experts within my surgical specialty and to collaborate with leading researchers to optimise treatments for oesophageal cancer.&rdquo;<cite>Matthew Read</cite></div>
+      </div>
+    </div>
+
+    <div class="text-center reveal" style="margin-top:2.6rem">
+      <a class="btn btn-green" href="grants.html">Explore our education grants <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA STRIP ============ -->
 <section class="section donate">
   <div class="container">
-    <h2 class="h-section reveal">Education extends beyond the operating theatre.</h2>
-    <p class="lead reveal">We also fund educational grants for nursing and allied health professionals, supporting the whole multidisciplinary team.</p>
+    <h2 class="h-section reveal">Knowledge is part of hope.</h2>
+    <p class="lead reveal">Every gift funds the research that turns today&rsquo;s questions into tomorrow&rsquo;s answers, and the education that helps patients and surgeons alike.</p>
     <div class="donate-ctas reveal">
-      <a class="btn btn-gold" href="grants.html">Explore our grants <span class="arr">&rarr;</span></a>
-      <a class="btn btn-outline" href="index.html#donate">Support education</a>
+      <a class="btn btn-gold" href="donate.html">Support our work <span class="arr">&rarr;</span></a>
+      <a class="btn btn-outline" href="research.html">See the research you fund</a>
     </div>
+    <p class="dgr">Registered charity with DGR status. Donations of $2 or more are tax-deductible.</p>
   </div>
 </section>
 
@@ -144,7 +386,7 @@
       <div class="footer-col">
         <h3>Get involved</h3>
         <ul>
-          <li><a href="index.html#donate">Donate</a></li>
+          <li><a href="donate.html">Donate</a></li>
           <li><a href="sponsor-us.html">Sponsor us</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="index.html#champions">Champions of HOPE</a></li>
@@ -173,7 +415,7 @@
   </div>
 </footer>
 
-<a class="donate-fab" href="index.html#donate" aria-label="Donate to The HOPE Fund"><span class="heart" aria-hidden="true">&#9829;</span> Donate</a>
+<a class="donate-fab" href="donate.html" aria-label="Donate to The HOPE Fund"><span class="heart" aria-hidden="true">&#9829;</span> Donate</a>
 
 <script src="js/main.js" defer></script>
 </body>
