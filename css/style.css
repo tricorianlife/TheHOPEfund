@@ -98,14 +98,15 @@ html.js .reveal.in{opacity:1;transform:none}
  padding:1.1rem 0;
 }
 .site-header.scrolled{background:rgba(250,247,240,.97);box-shadow:var(--shadow-sm)}
-.nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;overflow-x:auto;scrollbar-width:none}
+.nav-wrap::-webkit-scrollbar{display:none}
 .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
 .brand .logo-stack{position:relative;display:block;height:44px;width:133px}
 .brand .logo-stack img{position:absolute;left:0;top:0;height:44px;width:auto;transition:opacity .3s var(--ease)}
 .brand .logo-dark{opacity:0}
 .site-header.scrolled .brand .logo-light{opacity:0}
 .site-header.scrolled .brand .logo-dark{opacity:1}
-.nav-links{display:flex;align-items:center;gap:1.7rem;list-style:none}
+.nav-links{display:flex;align-items:center;gap:1.1rem;list-style:none;white-space:nowrap}
 .nav-links a{
  color:#fff;font-weight:600;font-size:.92rem;letter-spacing:.02em;
  position:relative;padding:.3rem 0;transition:color .3s;
