@@ -133,9 +133,16 @@ html.js .reveal.in{opacity:1;transform:none}
 .nav-links a:hover::after{transform:scaleX(1)}
 .nav-links a:hover{color:var(--gold-400)}
 .site-header.scrolled .nav-links a:hover{color:var(--gold-600)}
-.nav-donate{background:var(--gold-500);color:var(--green-950)!important;padding:.6rem 1.4rem;border-radius:999px;font-weight:700}
-.nav-donate::after{display:none}
-.nav-donate:hover{background:var(--gold-400);color:var(--green-950)!important;transform:translateY(-2px)}
+.nav-links a.nav-donate{
+  display:inline-flex;align-items:center;gap:.5em;
+  background:var(--gold-500);color:var(--green-950)!important;
+  padding:.62rem 1.5rem;border-radius:999px;font-weight:700;letter-spacing:.01em;
+  box-shadow:0 4px 16px rgba(197,160,40,.35);
+  transition:background .3s var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease);
+}
+.nav-links a.nav-donate::before{content:"\2665";font-size:.82em;line-height:1}
+.nav-links a.nav-donate::after{display:none}
+.nav-links a.nav-donate:hover{background:var(--gold-400);color:var(--green-950)!important;transform:translateY(-2px);box-shadow:0 8px 24px rgba(197,160,40,.5)}
 .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;z-index:110}
 .menu-toggle span{display:block;width:26px;height:2.5px;background:#fff;margin:6px 0;transition:transform .3s var(--ease),opacity .3s var(--ease),background-color .3s var(--ease)}
 .site-header.scrolled .menu-toggle span{background:var(--green-800)}
