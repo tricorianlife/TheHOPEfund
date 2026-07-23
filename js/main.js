@@ -272,4 +272,65 @@
 
     render();
   }
+
+  /* 3D Carousel (This Year's Focus survivorship images) */
+  var cara = document.querySelector(".cara-3d");
+  if(cara){
+    var cards = Array.prototype.slice.call(cara.querySelectorAll(".cara-3d-card"));
+    var dotsWrap = cara.querySelector(".cara-3d-dots");
+    var prevBtn = cara.querySelector(".cara-3d-prev");
+    var nextBtn = cara.querySelector(".cara-3d-next");
+    var current = 0;
+    var n = cards.length;
+
+    cards.forEach(function(_, i){
+      var d = document.createElement("button");
+      d.className = "cara-3d-dot" + (i === 0 ? " active" : "");
+      d.setAttribute("aria-label", "Image " + (i + 1));
+      d.addEventListener("click", function(){ go(i); });
+      dotsWrap.appendChild(d);
+    });
+    var dots = Array.prototype.slice.call(dotsWrap.children);
+
+    function go(idx){
+      current = ((idx % n) + n) % n;
+      cards.forEach(function(c, i){
+        var off = i - current;
+        c.classList.remove("active","prev","next","far-prev","far-next","hidden");
+        if(off === 0) c.classList.add("active");
+        else if(off === -1 || off === n - 1) c.classList.add("prev");
+        else if(off === 1 || off === -(n - 1)) c.classList.add("next");
+        else if(off === -2 || off === n - 2) c.classList.add("far-prev");
+        else if(off === 2 || off === -(n - 2)) c.classList.add("far-next");
+        else c.classList.add("hidden");
+      });
+      dots.forEach(function(d, i){ d.classList.toggle("active", i === current); });
+    }
+
+    if(prevBtn) prevBtn.addEventListener("click", function(){ go(current - 1); });
+    if(nextBtn) nextBtn.addEventListener("click", function(){ go(current + 1); });
+
+    cards.forEach(function(c, i){
+      c.addEventListener("click", function(){ if(i !== current) go(i); });
+    });
+
+    cara.addEventListener("keydown", function(e){
+      if(e.key === "ArrowLeft") go(current - 1);
+      else if(e.key === "ArrowRight") go(current + 1);
+    });
+
+    var startX = 0, endX = 0, swiping = false;
+    cara.addEventListener("touchstart", function(e){ startX = e.touches[0].clientX; swiping = true; }, {passive:true});
+    cara.addEventListener("touchend", function(){
+      if(swiping){
+        var delta = startX - (endX || startX);
+        if(Math.abs(delta) > 50){ go(current + (delta > 0 ? 1 : -1)); }
+        swiping = false; startX = 0; endX = 0;
+      }
+    }, {passive:true});
+    cara.addEventListener("touchmove", function(e){ if(swiping) endX = e.touches[0].clientX; }, {passive:true});
+
+    go(0);
+  }
+
 })();

@@ -1206,6 +1206,26 @@ section{position:relative}
 .reel-cap{margin-top:.4rem;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55)}
 .focus .section-head{max-width:820px}
 .focus-reel{margin-top:.5rem}
+/* 3D Carousel */
+.cara-3d{position:relative;display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.5rem;perspective:1400px;padding-bottom:3rem}
+.cara-3d-stage{position:relative;width:min(420px,80vw);height:min(525px,100vw);transform-style:preserve-3d}
+.cara-3d-card{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg);backface-visibility:hidden;transition:transform .6s var(--ease),opacity .6s var(--ease);cursor:pointer;will-change:transform,opacity}
+.cara-3d-card img{width:100%;height:100%;object-fit:cover;display:block}
+.cara-3d-card.active{z-index:10;transform:translateX(0) rotateY(0) scale(1);opacity:1}
+.cara-3d-card.prev{z-index:5;transform:translateX(-55%) rotateY(35deg) scale(.82);opacity:.5}
+.cara-3d-card.next{z-index:5;transform:translateX(55%) rotateY(-35deg) scale(.82);opacity:.5}
+.cara-3d-card.far-prev{z-index:1;transform:translateX(-85%) rotateY(45deg) scale(.65);opacity:.15}
+.cara-3d-card.far-next{z-index:1;transform:translateX(85%) rotateY(-45deg) scale(.65);opacity:.15}
+.cara-3d-card.hidden{opacity:0;transform:translateX(0) scale(.5);z-index:0;pointer-events:none}
+.cara-3d-btn{flex:none;width:48px;height:48px;border-radius:50%;border:1.5px solid var(--line-gold);background:rgba(250,247,240,.9);color:var(--green-800);font-size:1.4rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .3s var(--ease),color .3s var(--ease),transform .3s var(--ease),border-color .3s var(--ease);z-index:20}
+.cara-3d-btn:hover{background:var(--gold-500);color:var(--green-950);border-color:var(--gold-500);transform:scale(1.1)}
+.cara-3d-btn:active{transform:scale(.95)}
+.cara-3d-dots{position:absolute;bottom:0;left:0;right:0;display:flex;gap:.6rem;justify-content:center}
+.cara-3d-dot{width:10px;height:10px;border-radius:50%;border:none;background:rgba(197,160,40,.3);cursor:pointer;padding:0;transition:background .3s var(--ease),transform .3s var(--ease)}
+.cara-3d-dot.active{background:var(--gold-500);transform:scale(1.3)}
+.cara-3d-dot:hover{background:var(--gold-400)}
+@media (max-width:640px){.cara-3d-stage{width:min(280px,75vw);height:min(350px,94vw)}.cara-3d-btn{width:40px;height:40px;font-size:1.1rem}.cara-3d-card.prev{transform:translateX(-45%) rotateY(30deg) scale(.75)}.cara-3d-card.next{transform:translateX(45%) rotateY(-30deg) scale(.75)}.cara-3d-card.far-prev,.cara-3d-card.far-next{opacity:0}}
+@media (prefers-reduced-motion:reduce){.cara-3d-card{transition:none}}
 .focus-foot{
  display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;
  margin-top:1.6rem;padding-top:2rem;border-top:1px solid rgba(197,160,40,.25);
