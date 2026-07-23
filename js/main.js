@@ -320,7 +320,7 @@
     });
 
     var startX = 0, endX = 0, swiping = false;
-    cara.addEventListener("touchstart", function(e){ startX = e.touches[0].clientX; swiping = true; }, {passive:true});
+    cara.addEventListener("touchstart", function(e){ startX = e.touches[0].clientX; endX = startX; swiping = true; }, {passive:true});
     cara.addEventListener("touchend", function(){
       if(swiping){
         var delta = startX - (endX || startX);
