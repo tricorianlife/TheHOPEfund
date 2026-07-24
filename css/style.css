@@ -993,7 +993,7 @@ section{position:relative}
 .policy-card p{font-size:.92rem;color:var(--ink-soft);line-height:1.7}
 @media (max-width:900px){.policy-grid{grid-template-columns:1fr}}
 .other-ways{background:var(--green-50)}
-.ow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.ow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
 .ow-link{
  display:flex;flex-direction:column;gap:.4rem;background:#fff;border:1px solid var(--line);
  border-radius:16px;padding:1.6rem 1.5rem;text-decoration:none;
