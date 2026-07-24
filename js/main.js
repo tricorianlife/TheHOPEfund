@@ -339,3 +339,19 @@
   }
 
 })();
+
+
+/* Board bio dropdown toggles */
+(function(){
+  "use strict";
+  document.querySelectorAll(".bio-toggle").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var card = btn.closest(".board-card");
+      if(!card) return;
+      var open = card.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      var label = btn.querySelector(".bio-toggle-label");
+      if(label) label.textContent = open ? "Show less" : "Read more";
+    });
+  });
+})();
