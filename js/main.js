@@ -339,19 +339,59 @@
   }
 
 })();
-
-
-/* Board bio dropdown toggles */
+/* Profile modal */
 (function(){
   "use strict";
-  document.querySelectorAll(".bio-toggle").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      var card = btn.closest(".board-card");
-      if(!card) return;
-      var open = card.classList.toggle("open");
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-      var label = btn.querySelector(".bio-toggle-label");
-      if(label) label.textContent = open ? "Show less" : "Read more";
+  var overlay=document.getElementById("profile-overlay");
+  if(!overlay) return;
+  var modal=overlay.querySelector(".profile-modal");
+  var backdrop=overlay.querySelector(".profile-backdrop");
+  var closeBtn=overlay.querySelector(".profile-modal-close");
+  var photo=document.getElementById("profile-modal-photo");
+  var nameEl=document.getElementById("profile-modal-name");
+  var roleEl=document.getElementById("profile-modal-role");
+  var locEl=document.getElementById("profile-modal-location");
+  var bioEl=document.getElementById("profile-modal-bio");
+  var lastTrigger=null;
+
+  function openModal(trigger){
+    lastTrigger=trigger;
+    photo.src=trigger.getAttribute("data-photo");
+    photo.alt=trigger.getAttribute("data-name");
+    nameEl.textContent=trigger.getAttribute("data-name");
+    roleEl.textContent=trigger.getAttribute("data-role");
+    locEl.textContent=trigger.getAttribute("data-location");
+    bioEl.innerHTML="";
+    trigger.getAttribute("data-bio").split(/\n\s*\n/).forEach(function(para){
+      var p=document.createElement("p");
+      p.textContent=para.trim();
+      bioEl.appendChild(p);
     });
+    overlay.classList.add("open");
+    overlay.removeAttribute("aria-hidden");
+    document.body.classList.add("profile-open");
+    closeBtn.focus();
+  }
+  function closeModal(){
+    overlay.classList.remove("open");
+    overlay.setAttribute("aria-hidden","true");
+    document.body.classList.remove("profile-open");
+    if(lastTrigger) lastTrigger.focus();
+  }
+  document.querySelectorAll(".profile-btn").forEach(function(btn){
+    btn.addEventListener("click",function(){ openModal(btn); });
+  });
+  closeBtn.addEventListener("click",closeModal);
+  backdrop.addEventListener("click",closeModal);
+  document.addEventListener("keydown",function(e){
+    if(!overlay.classList.contains("open")) return;
+    if(e.key==="Escape"){ closeModal(); return; }
+    if(e.key==="Tab"){
+      var focusables=modal.querySelectorAll("button,[href],[tabindex]:not([tabindex='-1'])");
+      if(!focusables.length) return;
+      var first=focusables[0], last=focusables[focusables.length-1];
+      if(e.shiftKey){ if(document.activeElement===first){ e.preventDefault(); last.focus(); } }
+      else{ if(document.activeElement===last){ e.preventDefault(); first.focus(); } }
+    }
   });
 })();
