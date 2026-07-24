@@ -97,7 +97,7 @@ html.js .reveal.in{opacity:1;transform:none}
  transition:background-color .4s var(--ease),box-shadow .4s var(--ease);
  padding:1.1rem 0;
 }
-.site-header.scrolled{background:rgba(255,255,255,.97);box-shadow:var(--shadow-sm)}
+.site-header.scrolled{background:#fff;box-shadow:var(--shadow-sm)}
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
 .brand .logo-stack{position:relative;display:block;height:44px;width:133px}
@@ -584,7 +584,7 @@ section{position:relative}
 .donate-fab:hover{background:var(--gold-400);color:var(--green-950);transform:translateY(-3px)}
 .donate-fab .heart{color:var(--green-900)}
 @media (prefers-reduced-motion:reduce){.donate-fab{transition:opacity .2s}}
-.site-header.page{background:rgba(255,255,255,.97);box-shadow:var(--shadow-sm)}
+.site-header.page{background:#fff;box-shadow:var(--shadow-sm)}
 .site-header.page .nav-links a{color:var(--green-800)}
 .site-header.page .nav-links a:hover{color:var(--gold-600)}
 .site-header.page .menu-toggle span{background:var(--green-800)}
